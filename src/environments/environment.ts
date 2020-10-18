@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   base_url: 'https://awv-fietsverbindingen.development.appwi.se/api',
-  asset_url: 'https://awv-fietsverbindingen.development.appwi.se/media'
+  asset_url: 'https://awv-fietsverbindingen.development.appwi.se'
 
 };
 

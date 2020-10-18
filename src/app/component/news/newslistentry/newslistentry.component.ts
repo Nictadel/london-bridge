@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { News } from 'src/app/models/news';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'newslistentry',
@@ -6,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newslistentry.component.scss']
 })
 export class NewslistentryComponent implements OnInit {
+
+  @Input() newsEntry: News;
+
+  public get baseURL(){
+    return environment.asset_url;
+  }
 
   constructor() { }
 
