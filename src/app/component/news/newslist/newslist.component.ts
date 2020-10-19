@@ -16,7 +16,6 @@ export class NewslistComponent implements OnInit {
   constructor(private newsListService: NewsService, private router: Router ) { }
 
   ngOnInit(): void {
-
     this.newsListService.getNews().subscribe(r => {
       this.news = r;
     })

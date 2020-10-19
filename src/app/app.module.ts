@@ -11,6 +11,9 @@ import { NewsitemComponent } from './component/news/newsitem/newsitem.component'
 import { NewslistentryComponent } from './component/news/newslistentry/newslistentry.component';
 import { NewsOverviewComponent } from './routes/news-overview/news-overview.component';
 import { NewsArticleComponent } from './routes/news-article/news-article.component';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { environment } from 'src/environments/environment';
+import { DisplayMapComponentComponent } from './component/display-map-component/display-map-component.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,16 @@ import { NewsArticleComponent } from './routes/news-article/news-article.compone
     NewsitemComponent,
     NewslistentryComponent,
     NewsOverviewComponent,
-    NewsArticleComponent
+    NewsArticleComponent,
+    DisplayMapComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxMapboxGLModule.withConfig({
+      accessToken: environment.mapbox_token,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

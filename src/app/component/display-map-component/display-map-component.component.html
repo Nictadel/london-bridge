@@ -1,0 +1,14 @@
+<p>Display Map working!</p>
+<mgl-map *ngIf="coordPairs[0]" [style]="styleURL" [zoom]="[15]" [center]="coordPairs[0][0]" class="h-screen">
+  <mgl-geojson-source id="bridgeLines">
+    <mgl-feature *ngFor="let geometry of geometryObjects" [geometry]="geometry"></mgl-feature>
+  </mgl-geojson-source>
+  <mgl-layer id="route" type="line" source="bridgeLines" [layout]="{
+      'line-join': 'round',
+      'line-cap': 'round'
+    }" [paint]="{
+      'line-color': '#3EC7FF',
+      'line-width': 8
+    }">
+  </mgl-layer>
+</mgl-map>

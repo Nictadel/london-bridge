@@ -1,7 +1,7 @@
 import { Accessibility } from './accessibility'
 import { ConnectionEnd } from './connection-end';
 
-export interface News {
+export interface Connection {
     "id": number,
     "state_id": number,
     "name": string,
