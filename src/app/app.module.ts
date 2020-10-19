@@ -10,6 +10,7 @@ import { NewslistComponent } from './component/news/newslist/newslist.component'
 import { NewsitemComponent } from './component/news/newsitem/newsitem.component';
 import { NewslistentryComponent } from './component/news/newslistentry/newslistentry.component';
 import { NewsOverviewComponent } from './routes/news-overview/news-overview.component';
+import { NewsArticleComponent } from './routes/news-article/news-article.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NewsOverviewComponent } from './routes/news-overview/news-overview.comp
     NewslistComponent,
     NewsitemComponent,
     NewslistentryComponent,
-    NewsOverviewComponent
+    NewsOverviewComponent,
+    NewsArticleComponent
   ],
   imports: [
     BrowserModule,

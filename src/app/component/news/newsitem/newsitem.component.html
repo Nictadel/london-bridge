@@ -1,1 +1,4 @@
-<p>newsitem works!</p>
+<p>Dit is een nieuwsItem!</p>
+<h1>{{newsItem.title}}</h1>
+<p [innerHTML]="newsItem.description"></p>
+<img [src]="baseURL + newsItem.image_url"/>
