@@ -3,11 +3,11 @@
 //     width: 500px;
 //   }
 
-:host ::ng-deep .mapboxgl-popup-content {
+::ng-deep .mapboxgl-popup-content {
     background: transparent;
     box-shadow: none;
 }
 
-:host ::ng-deep .mapboxgl-popup-tip {
+::ng-deep .mapboxgl-popup-tip {
     border-top-color: transparent;
 }
