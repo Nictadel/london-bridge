@@ -45,7 +45,6 @@ export class DisplayMapComponentComponent implements OnInit {
       });
 
       coordPairs.push(coordPair);
-      console.log(coordPairs);
       this.coordPairs = coordPairs;
     });
   }

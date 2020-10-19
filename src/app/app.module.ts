@@ -14,6 +14,7 @@ import { NewsArticleComponent } from './routes/news-article/news-article.compone
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { DisplayMapComponentComponent } from './component/display-map-component/display-map-component.component';
+import { MapPopupComponent } from './component/map-popup/map-popup.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DisplayMapComponentComponent } from './component/display-map-component/
     NewslistentryComponent,
     NewsOverviewComponent,
     NewsArticleComponent,
-    DisplayMapComponentComponent
+    DisplayMapComponentComponent,
+    MapPopupComponent
   ],
   imports: [
     BrowserModule,

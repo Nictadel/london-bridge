@@ -1,0 +1,9 @@
+<div class="bg-white mb-1 p-1 rounded shadow">
+    <div *ngFor="let ends of connection.connection_ends">
+        <p *ngFor="let service of ends.services">{{service.title}} - {{service.state.name}}</p>
+    </div>
+    
+</div>
+<div class="bg-blue-900 text-white p-1 rounded shadow">
+    <p class="text-center mx-auto">{{connection.name}}</p>
+</div>
