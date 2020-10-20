@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
 export class NewslistentryComponent implements OnInit {
   @Input() newsEntry: News;
 
+  @Input() alternateStyle: boolean = false;
+
   public get baseURL(){
     return environment.asset_url;
   }
