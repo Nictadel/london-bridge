@@ -12,7 +12,8 @@ module.exports = (isProd) => ({
       extend: {
         colors: {
           dark: '#2C3035',
-          primary: '#3EC7FF'
+          primary: '#3EC7FF',
+          secondary: '#0F5B69'
         }
       }
     }

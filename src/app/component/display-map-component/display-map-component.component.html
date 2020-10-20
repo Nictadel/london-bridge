@@ -1,5 +1,4 @@
-<p>Display Map working!</p>
-<mgl-map *ngIf="geometryObjects" [style]="styleURL" [zoom]="[15]" [center]="coordPairs[0][0]" class="h-screen">
+<mgl-map *ngIf="geometryObjects" [style]="styleURL" [zoom]="[15]" [center]="coordPairs[0][0]" class="h-64">
   <mgl-geojson-source id="bridgeLines">
     <mgl-feature *ngFor="let geometry of geometryObjects" [geometry]="geometry"></mgl-feature>
   </mgl-geojson-source>
