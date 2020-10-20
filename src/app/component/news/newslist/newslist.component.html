@@ -1,3 +1,9 @@
-<a [routerLink]="['/news', newsItem.id]" *ngFor="let newsItem of news">
-    <newslistentry [newsEntry]="newsItem"></newslistentry>
-</a>
+<div *ngIf="emitEvent; else openLink" class="cursor-pointer">
+    <newslistentry *ngFor="let newsItem of news" [newsEntry]="newsItem" (click)="emitNewsEntry(newsItem)"></newslistentry>
+</div>
+
+<ng-template #openLink>
+    <a [routerLink]="['/news', newsItem.id]" *ngFor="let newsItem of news">
+        <newslistentry [newsEntry]="newsItem"></newslistentry>
+    </a>
+</ng-template>

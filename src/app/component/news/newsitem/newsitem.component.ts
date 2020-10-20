@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { News } from 'src/app/models/news';
 import { NewsService } from 'src/app/service/news.service';
 import { environment } from 'src/environments/environment';
@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './newsitem.component.html',
   styleUrls: ['./newsitem.component.scss']
 })
-export class NewsitemComponent implements OnInit {
+export class NewsitemComponent implements OnInit, OnChanges {
 
   @Input() newsItem: News;
 
@@ -29,6 +29,10 @@ export class NewsitemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngOnChanges(): void {
     this.imageUrl = this.baseURL + this.newsItem.image_url;
 
     this.createdAt = new Date(this.newsItem.created_at * this.milliseconds);
