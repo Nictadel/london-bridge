@@ -1,4 +1,4 @@
-<mgl-map *ngIf="geometryObjects" [style]="styleURL" [zoom]="[15]" [center]="coordPairs[0][0]" class="h-64">
+<mgl-map *ngIf="geometryObjects" [style]="styleURL" [zoom]="[15]" [center]="coordPairs[0][0]" class="h-full">
   <mgl-geojson-source id="bridgeLines">
     <mgl-feature *ngFor="let geometry of geometryObjects" [geometry]="geometry"></mgl-feature>
   </mgl-geojson-source>

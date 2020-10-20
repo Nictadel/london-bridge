@@ -1,5 +1,5 @@
-<div class="flex flex-col">
-  <nav class="flex flex-row h-32 bg-dark">
+<div class="flex flex-col h-full overflow-hidden">
+  <nav class="flex flex-row h-32">
     <a routerLink="/">
       <div class="flex flex-row h-full px-6">
         <img src="assets/icons/logo.svg" class="text-primary h-12 my-auto mr-4 hidden md:block">
@@ -15,7 +15,12 @@
       </div>
     </a>
   </nav>
-  <display-map-component></display-map-component>
+  <div class="flex-grow flex overflow-hidden">
+    <div class="overflow-x-hidden w-120 hidden md:block">
+      <newslist></newslist>
+    </div>
+    <div class="flex-grow">
+      <display-map-component></display-map-component>
+    </div>
+  </div>
 </div>
-
-
