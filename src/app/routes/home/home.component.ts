@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private location: Location, private settingsService: SettingsService) { }
 
   ngOnInit(): void {
-    //this.location.back();
     
     this.settingsService.getSettings().subscribe(r => {
       this.currSettings = r

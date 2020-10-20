@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,12 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { environment } from 'src/environments/environment';
 import { DisplayMapComponentComponent } from './component/display-map-component/display-map-component.component';
 import { MapPopupComponent } from './component/map-popup/map-popup.component';
+import { HeaderArticleMobileComponent } from './component/header-article-mobile/header-article-mobile.component';
+import { EllipsisModule } from 'ngx-ellipsis';
+import { registerLocaleData } from '@angular/common';
+import localeNl from '@angular/common/locales/nl';
+
+registerLocaleData(localeNl);
 
 @NgModule({
   declarations: [
@@ -27,17 +33,19 @@ import { MapPopupComponent } from './component/map-popup/map-popup.component';
     NewsOverviewComponent,
     NewsArticleComponent,
     DisplayMapComponentComponent,
-    MapPopupComponent
+    MapPopupComponent,
+    HeaderArticleMobileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    EllipsisModule,
     NgxMapboxGLModule.withConfig({
       accessToken: environment.mapbox_token,
     })
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "nl-BE"}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,3 @@
-<div (click)="onSelect(newsItem.id)" *ngFor="let newsItem of news">
+<a [routerLink]="['/news', newsItem.id]" *ngFor="let newsItem of news">
     <newslistentry [newsEntry]="newsItem"></newslistentry>
-</div>
+</a>

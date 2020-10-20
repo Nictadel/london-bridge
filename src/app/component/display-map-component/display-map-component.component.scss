@@ -9,5 +9,6 @@
 }
 
 ::ng-deep .mapboxgl-popup-tip {
-    border-top-color: transparent;
+    display: none;
+    padding: 0;
 }

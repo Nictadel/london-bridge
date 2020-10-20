@@ -20,9 +20,4 @@ export class NewslistComponent implements OnInit {
       this.news = r;
     })
   }
-
-  onSelect(newsItemId: number){
-      this.router.navigate(['/news', newsItemId]);
-  }
-
 }
