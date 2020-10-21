@@ -1,0 +1,84 @@
+<div class="bg-dark w-full rounded-lg p-5 mb-6 shadow text-gray-400">
+    <div class="flex cursor-pointer" (click)="opened = !opened;">
+        <h1 class="text-warning text-xl font-bold mr-auto">{{connection.name}}</h1>
+        <div *ngIf="generalInfo" class="my-auto ml-5">
+            <img class="h-5" src="assets/icons/icon_warning.svg">
+        </div>
+
+        <div *ngIf="info" class="my-auto ml-1">
+            <img class="h-5" src="assets/icons/icon_info.svg">
+        </div>
+        <div *ngIf="opened; else closed" class="my-auto ml-5">
+            <svg class="h-8 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd"
+                    d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                    clipRule="evenodd" />
+            </svg>
+        </div>
+
+        <ng-template #closed>
+            <div class="my-auto ml-5">
+                <svg class="h-8 text-gray-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd" />
+                </svg>
+            </div>
+        </ng-template>
+    </div>
+    <div *ngIf="opened">
+
+        <div class="mb-8">
+            <div *ngFor="let service of stateData | keyvalue">
+                <div class="flex my-3">
+                    <img *ngIf="service.key === 'Lift'" src="assets/icons/lift_white.svg" class="w-6 mr-2 my-auto">
+                    <img *ngIf="service.key === 'Roltrap'" src="assets/icons/stairs_white.svg" class="w-6 mr-2 my-auto">
+                    <h3 class="flex-grow">{{service.key}}</h3>
+                    <div>
+                        <div class="rounded-full border border-white flex px-1">
+                            <div *ngFor="let shoreState of service.value | keyvalue">
+                                <!-- {{shoreState.key}}:{{shoreState.value}} -->
+                                <div class="flex">
+                                    <div class="capitalize my-auto mx-2">{{shoreState.key}}</div>
+                                    <div class="h-4 w-4 rounded-full my-auto"
+                                        [ngClass]="{'bg-ok' : shoreState.value === 'Actief', 'bg-warning': shoreState.value === 'Inactief'}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngFor="let infoPiece of info" class="flex mt-3">
+            <img class="h-4 mt-1 mr-2" src="assets/icons/icon_info.svg">
+            <div>
+                <h3 class="font-semibold mb-1 text-white">{{infoPiece.name}}</h3>
+                <p class="text-sm">{{infoPiece.info}}</p>
+            </div>
+        </div>
+
+
+        <div *ngIf="generalInfo" class="flex mt-3">
+            <img class="h-4 mt-1 mr-2" src="assets/icons/icon_warning_alt.svg">
+            <div>
+                <h3 class="font-semibold mb-1 text-white">Algemeen</h3>
+                <p class="text-sm">{{generalInfo}}</p>
+            </div>
+        </div>
+
+        <h4 class="text-white text-sm font-semibold mt-3 mb-2">Toegankelijkheid</h4>
+
+        <div class="flex">
+            <div *ngFor="let accessibility of connection.accessibility" class="mt-auto mr-4">
+                <img *ngIf="accessibility.name === 'walk'" src="assets/icons/acc_walk.svg">
+                <img *ngIf="accessibility.name === 'wheelchair'" src="assets/icons/acc_wheelchair.svg">
+                <img *ngIf="accessibility.name === 'bike'" src="assets/icons/acc_bike.svg">
+                <img *ngIf="accessibility.name === 'cargo-bike'" src="assets/icons/acc_bakfiets.svg">
+                <img *ngIf="accessibility.name === 'moped'" src="assets/icons/acc_scooter.svg">
+            </div>
+        </div>
+    </div>
+</div>

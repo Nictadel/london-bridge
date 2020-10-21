@@ -19,6 +19,8 @@ import { HeaderArticleMobileComponent } from './component/header-article-mobile/
 import { EllipsisModule } from 'ngx-ellipsis';
 import { registerLocaleData } from '@angular/common';
 import localeNl from '@angular/common/locales/nl';
+import { ConnectionInfoComponent } from './component/connection-info/connection-info.component';
+import { ConnectionPanelComponent } from './component/connection-panel/connection-panel.component';
 
 registerLocaleData(localeNl);
 
@@ -35,6 +37,8 @@ registerLocaleData(localeNl);
     DisplayMapComponentComponent,
     MapPopupComponent,
     HeaderArticleMobileComponent,
+    ConnectionInfoComponent,
+    ConnectionPanelComponent,
   ],
   imports: [
     BrowserModule,

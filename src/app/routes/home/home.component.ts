@@ -35,7 +35,12 @@ export class HomeComponent implements OnInit {
   }
 
   handleNewsClick(newsItem: News): void {
-    this.currentNewsItem = newsItem;
+    if(this.currentNewsItem !== newsItem){
+      this.currentNewsItem = newsItem;
+    } else {
+      this.handleNewsClose();
+    }
+    
   }
 
   handleNewsClose(): void {
