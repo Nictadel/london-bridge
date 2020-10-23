@@ -8,9 +8,9 @@ describe('MapPopupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapPopupComponent ]
+      declarations: [MapPopupComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

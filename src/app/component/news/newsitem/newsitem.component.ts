@@ -15,21 +15,21 @@ export class NewsitemComponent implements OnInit, OnChanges {
   public imageUrl: string;
 
   public createdAt: Date;
-  
+
   public updatedAt: Date;
 
-  private get milliseconds(){
+  private get milliseconds(): number {
     return 1000;
   }
 
-  public get baseURL(){
+  public get baseURL(): string {
     return environment.asset_url;
   }
 
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
   ngOnChanges(): void {
@@ -40,7 +40,7 @@ export class NewsitemComponent implements OnInit, OnChanges {
   }
 
   onError(): void {
-    this.imageUrl = "/assets/images/fallback.jpg"
+    this.imageUrl = '/assets/images/fallback.jpg';
   }
 
 }

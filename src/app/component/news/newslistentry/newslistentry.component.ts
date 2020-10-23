@@ -10,9 +10,9 @@ import { environment } from 'src/environments/environment';
 export class NewslistentryComponent implements OnInit {
   @Input() newsEntry: News;
 
-  @Input() alternateStyle: boolean = false;
+  @Input() alternateStyle = false;
 
-  public get baseURL(){
+  public get baseURL(): string {
     return environment.asset_url;
   }
 
@@ -22,7 +22,7 @@ export class NewslistentryComponent implements OnInit {
 
   public createdAt: Date;
 
-  private get milliseconds(){
+  private get milliseconds(): number {
     return 1000;
   }
 
@@ -34,13 +34,13 @@ export class NewslistentryComponent implements OnInit {
 
     this.createdAt = new Date(this.newsEntry.created_at * this.milliseconds);
 
-    let tmp = document.createElement("DIV");
+    const tmp = document.createElement('DIV');
     tmp.innerHTML = this.newsEntry.description;
-    this.textContent = tmp.textContent || tmp.innerText || "";
+    this.textContent = tmp.textContent || tmp.innerText || '';
   }
 
   onError(): void {
-    this.imageUrl = "/assets/images/fallback.jpg"
+    this.imageUrl = '/assets/images/fallback.jpg';
   }
 
 }

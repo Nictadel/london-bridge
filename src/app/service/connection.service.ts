@@ -18,11 +18,11 @@ export class ConnectionService {
     return this.http.get<Connection[]>(`${environment.base_url}/connections`);
   }
 
-  public getConnection(id: number): Observable<Connection>{
+  public getConnection(id: number): Observable<Connection> {
     return this.http.get<Connection>(`${environment.base_url}/connections/${id}`);
   }
 
-  public getStates(): Observable<State[]>{
+  public getStates(): Observable<State[]> {
     return this.http.get<any>(`${environment.base_url}api/states`).pipe(map(r => r.data as State[]));
   }
 }

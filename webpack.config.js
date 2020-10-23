@@ -6,23 +6,21 @@ module.exports = (config) => {
 
   return merge(config, {
     module: {
-      rules: [
-        {
-          test: /\.scss$/,
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions: {
-              ident: 'postcss',
-              syntax: 'postcss-scss',
-              plugins: [
-                require('postcss-import'),
-                require('tailwindcss')(tailwindConfig),
-                require('autoprefixer'),
-              ]
-            }
+      rules: [{
+        test: /\.scss$/,
+        loader: 'postcss-loader',
+        options: {
+          postcssOptions: {
+            ident: 'postcss',
+            syntax: 'postcss-scss',
+            plugins: [
+              require('postcss-import'),
+              require('tailwindcss')(tailwindConfig),
+              require('autoprefixer'),
+            ]
           }
         }
-      ]
+      }]
     }
   });
 };

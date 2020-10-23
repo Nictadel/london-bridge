@@ -16,7 +16,7 @@ export class DisplayMapComponentComponent implements OnInit {
 
   public connectionData: Connection[];
 
-  public get styleURL() {
+  public get styleURL(): string {
     return environment.mapbox_styleURL;
   }
 
@@ -27,20 +27,20 @@ export class DisplayMapComponentComponent implements OnInit {
       this.connectionData = r;
       this.getLineCoords();
       this.prepareGeometry();
-    })
+    });
 
   }
 
   getLineCoords(): void {
 
-    let coordPairs = [];
+    const coordPairs = [];
 
     this.connectionData.forEach(connection => {
 
-      let coordPair = [];
+      const coordPair = [];
 
       connection.connection_ends.forEach(connectionEnd => {
-        let coord = [connectionEnd.long, connectionEnd.lat];
+        const coord = [connectionEnd.long, connectionEnd.lat];
         coordPair.push(coord);
       });
 
@@ -48,16 +48,16 @@ export class DisplayMapComponentComponent implements OnInit {
       this.coordPairs = coordPairs;
     });
   }
-  
+
   prepareGeometry(): void {
-    let geometryObjects = [];
+    const geometryObjects = [];
 
     this.coordPairs.forEach(coordPair => {
-      let geometry = {
+      const geometry = {
         type: 'LineString',
         coordinates: coordPair
       };
-  
+
       geometryObjects.push(geometry);
     });
 

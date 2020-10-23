@@ -1,5 +1,5 @@
 export interface Accessibility {
-    "id": number,
-    "name": string,
-    "possible": boolean;
+    'id': number;
+    'name': string;
+    'possible': boolean;
 }

@@ -16,10 +16,10 @@ export class NewsArticleComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let id = parseInt(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
 
     this.newsListService.getNewsById(id).subscribe(r => {
       this.newsItem = r;
-    })
+    });
   }
 }

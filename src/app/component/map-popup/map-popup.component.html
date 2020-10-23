@@ -1,18 +1,18 @@
 <div class="w-48">
-    <div class="flex -mx-1">
-        <div *ngFor="let service of stateData | keyvalue" class="flex-1 mx-1">
-            <div class="flex bg-white rounded h-10">
-                <img *ngIf="service.key === 'Lift'" src="assets/icons/lift.svg" class="w-8 ml-1 mr-auto my-auto">
-                <img *ngIf="service.key === 'Roltrap'" src="assets/icons/stairs.svg" class="w-8 ml-1 mr-auto my-auto">
-                    <div *ngFor="let shoreState of service.value | keyvalue" class="my-auto">
-                        <!-- {{shoreState.key}}:{{shoreState.value}} -->
-                            <img *ngIf="shoreState.value === 'Actief'" src="assets/icons/icon_on.svg" class="h-8">
-                            <img *ngIf="shoreState.value === 'Inactief'" src="assets/icons/icon_off.svg" class="h-8">
-                    </div>
-            </div>
+  <div class="flex -mx-1">
+    <div *ngFor="let service of stateData | keyvalue" class="flex-1 mx-1">
+      <div class="flex bg-white rounded h-10">
+        <img *ngIf="service.key === 'Lift'" src="assets/icons/lift.svg" class="w-8 ml-1 mr-auto my-auto">
+        <img *ngIf="service.key === 'Roltrap'" src="assets/icons/stairs.svg" class="w-8 ml-1 mr-auto my-auto">
+        <div *ngFor="let shoreState of service.value | keyvalue" class="my-auto">
+          <!-- {{shoreState.key}}:{{shoreState.value}} -->
+          <img *ngIf="shoreState.value === 'Actief'" src="assets/icons/icon_on.svg" class="h-8">
+          <img *ngIf="shoreState.value === 'Inactief'" src="assets/icons/icon_off.svg" class="h-8">
         </div>
+      </div>
     </div>
-    <div class="bg-secondary text-white p-1 rounded shadow h-10 flex mt-2">
-        <p class="m-auto text-lg">{{connection.name}}</p>
-    </div>
+  </div>
+  <div class="bg-secondary text-white p-1 rounded shadow h-10 flex mt-2">
+    <p class="m-auto text-lg">{{connection.name}}</p>
+  </div>
 </div>

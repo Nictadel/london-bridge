@@ -8,9 +8,9 @@ describe('DisplayMapComponentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DisplayMapComponentComponent ]
+      declarations: [DisplayMapComponentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

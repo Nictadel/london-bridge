@@ -1,7 +1,9 @@
-<img class="h-48 w-full object-cover object-center" [src]="imageUrl" (error)="onError()"/>
+<img class="h-48 w-full object-cover object-center" [src]="imageUrl" (error)="onError()" />
 <div class="px-4 mt-3 text-gray-400">
-    <h1 class="text-primary text-xl font-semibold">{{newsItem.title}}</h1>
-    <div class="text-md font-thin"><span class="capitalize">{{createdAt |  date:'EEEEEE dd/MM/yyyy HH:mm':'+1':''}}</span> om {{createdAt |  date:'HH:mm':'+1':''}}</div>
-    <div *ngIf="updatedAt" class="text-gray-600 text-sm pb-4">Laatst gewijzigd op {{updatedAt |  date:'dd/MM/yyyy \'om\' HH:mm':'+1':''}}</div>
-    <p [innerHTML]="newsItem.description"></p>    
+  <h1 class="text-primary text-xl font-semibold">{{newsItem.title}}</h1>
+  <div class="text-md font-thin"><span class="capitalize">{{createdAt |  date:'EEEEEE dd/MM/yyyy HH:mm':'+1':''}}</span>
+    om {{createdAt |  date:'HH:mm':'+1':''}}</div>
+  <div *ngIf="updatedAt" class="text-gray-600 text-sm pb-4">Laatst gewijzigd op
+    {{updatedAt |  date:'dd/MM/yyyy \'om\' HH:mm':'+1':''}}</div>
+  <p [innerHTML]="newsItem.description"></p>
 </div>

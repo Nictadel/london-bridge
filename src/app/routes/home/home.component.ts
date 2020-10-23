@@ -18,29 +18,29 @@ export class HomeComponent implements OnInit {
   constructor(private location: Location, private settingsService: SettingsService) { }
 
   ngOnInit(): void {
-    
+
     this.settingsService.getSettings().subscribe(r => {
-      this.currSettings = r
+      this.currSettings = r;
       const localSettings = localStorage.getItem('settings');
 
-      if(localSettings === ''){
+      if (localSettings === '') {
         localStorage.setItem('settings', this.currSettings.version);
         return;
       }
-      if(localSettings !== this.currSettings.version){
+      if (localSettings !== this.currSettings.version) {
         localStorage.setItem('settings', this.currSettings.version);
-        window.location.reload(); //Re-initialize cache on api version change
+        window.location.reload(); // Re-initialize cache on api version change
       }
     });
   }
 
   handleNewsClick(newsItem: News): void {
-    if(this.currentNewsItem !== newsItem){
+    if (this.currentNewsItem !== newsItem) {
       this.currentNewsItem = newsItem;
     } else {
       this.handleNewsClose();
     }
-    
+
   }
 
   handleNewsClose(): void {

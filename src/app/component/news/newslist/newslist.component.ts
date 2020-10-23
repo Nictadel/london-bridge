@@ -11,20 +11,20 @@ import { NewsService } from 'src/app/service/news.service';
 })
 export class NewslistComponent implements OnInit {
 
-  @Input() emitEvent: boolean = false;
+  @Input() emitEvent = false;
 
   @Output() newsItemClick = new EventEmitter<News>();
   public news: News[];
 
-  constructor(private newsListService: NewsService, private router: Router ) { }
+  constructor(private newsListService: NewsService, private router: Router) { }
 
   ngOnInit(): void {
     this.newsListService.getNews().subscribe(r => {
       this.news = r;
-    })
+    });
   }
 
-  emitNewsEntry(newsItem: News){
+  emitNewsEntry(newsItem: News): void {
     this.newsItemClick.emit(newsItem);
   }
 }

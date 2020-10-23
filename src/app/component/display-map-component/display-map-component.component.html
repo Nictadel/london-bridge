@@ -10,8 +10,8 @@
       'line-width': 8
     }">
   </mgl-layer>
-  <mgl-popup *ngFor="let connection of connectionData" [lngLat]="[connection.long, connection.lat ]" [closeOnClick]="false" 
-  [closeButton]="false" [anchor]="'bottom'">
+  <mgl-popup *ngFor="let connection of connectionData" [lngLat]="[connection.long, connection.lat ]"
+    [closeOnClick]="false" [closeButton]="false" [anchor]="'bottom'">
     <map-popup [connection]="connection"></map-popup>
   </mgl-popup>
 </mgl-map>

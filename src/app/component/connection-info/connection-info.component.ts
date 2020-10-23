@@ -9,7 +9,7 @@ import { SettingsService } from 'src/app/service/settings.service';
   templateUrl: './connection-info.component.html',
   styleUrls: ['./connection-info.component.scss']
 })
-export class ConnectionInfoComponent implements OnInit, OnChanges{
+export class ConnectionInfoComponent implements OnInit, OnChanges {
 
   @Input() showActive?: number;
 
@@ -17,22 +17,22 @@ export class ConnectionInfoComponent implements OnInit, OnChanges{
 
   public connectionData: Connection[];
 
-  public settings: Settings
+  public settings: Settings;
   constructor(private connectionService: ConnectionService, private settingsService: SettingsService) { }
 
   ngOnInit(): void {
     this.connectionService.getAllConnections().subscribe(r => {
       this.connectionData = r;
-    })
+    });
 
     this.settingsService.getSettings().subscribe(r => {
       this.settings = r;
-    })
+    });
 
   }
 
   ngOnChanges(): void {
-    if(this.currentActive !== this.showActive){
+    if (this.currentActive !== this.showActive) {
       this.currentActive = this.showActive;
     }
   }

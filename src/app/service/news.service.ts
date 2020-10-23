@@ -18,8 +18,8 @@ export class NewsService {
 
   public getNewsById(id: number): Observable<News> {
     return this.http.get<News[]>(`${environment.base_url}/news`).pipe(map(r => {
-      for (let newsItem of r){
-        if (newsItem.id === id){
+      for (const newsItem of r) {
+        if (newsItem.id === id) {
           return newsItem;
         }
       }

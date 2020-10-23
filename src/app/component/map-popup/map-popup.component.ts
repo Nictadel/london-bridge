@@ -16,16 +16,16 @@ export class MapPopupComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let stateData = {};
+    const stateData = {};
     this.connection.connection_ends.forEach(end => {
-      let shoreName = end.shore.short_name.toLowerCase();
+      const shoreName = end.shore.short_name.toLowerCase();
       end.services.forEach(service => {
-        if(!stateData[service.type.name]){
+        if (!stateData[service.type.name]) {
           stateData[service.type.name] = {};
         }
         stateData[service.type.name][shoreName] = service.state.name;
-      })
-    })
+      });
+    });
     this.stateData = stateData;
 
   }

@@ -49,7 +49,7 @@ registerLocaleData(localeNl);
       accessToken: environment.mapbox_token,
     })
   ],
-  providers: [{provide: LOCALE_ID, useValue: "nl-BE"}],
+  providers: [{ provide: LOCALE_ID, useValue: 'nl-BE' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
